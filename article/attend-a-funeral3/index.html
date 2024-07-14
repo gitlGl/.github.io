@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="表结构如下：\n">
+<title>sql 50题练习</title>
+
+<link rel='canonical' href='http://localhost:1313/article/attend-a-funeral3/'>
+
+<link rel="stylesheet" href="/scss/style.min.f75e00e3e6b3222e4fab2fe29df8ac7225425fadb89514118ee96a217cac9f47.css"><meta property='og:title' content="sql 50题练习">
+<meta property='og:description' content="表结构如下：\n">
+<meta property='og:url' content='http://localhost:1313/article/attend-a-funeral3/'>
+<meta property='og:site_name' content='个人博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='sql' /><meta property='article:published_time' content='2021-11-03T21:13:38&#43;00:00'/><meta property='article:modified_time' content='2021-11-03T21:13:38&#43;00:00'/><meta property='og:image' content='http://localhost:1313/img/law.jpeg' />
+<meta name="twitter:site" content="@rpwi">
+    <meta name="twitter:creator" content="@rpwi"><meta name="twitter:title" content="sql 50题练习">
+<meta name="twitter:description" content="表结构如下：\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/law.jpeg' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+  
+
+<style>
+    :root {
+        --article-font-family: "HarmonyOS_Regular", var(--base-font-family);
+    }
+</style>
+
+<script>
+		(function () {
+		    const customFont = document.createElement('link');
+		    
+			customFont.href = "https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css";
+		    
+			customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huef9ee256f2ecf5c80335a624df2eb0ce_77513_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">个人博客</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='ooboliqu@gmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+  <path d="M3 7l9 6l9 -6" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/gitlGl'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://gitlgl.github.io/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.weibo.com/u/7313559059'
+                        target="_blank"
+                        title="weibo"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-weibo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M19 14.127c0 3.073 -3.502 5.873 -8 5.873c-4.126 0 -8 -2.224 -8 -5.565c0 -1.78 .984 -3.737 2.7 -5.567c2.362 -2.51 5.193 -3.687 6.551 -2.238c.415 .44 .752 1.39 .749 2.062c2 -1.615 4.308 .387 3.5 2.693c1.26 .557 2.5 .538 2.5 2.742z" />
+  <path d="M15 4h1a5 5 0 0 1 5 5v1" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.zhihu.com/people/test9-10'
+                        target="_blank"
+                        title="Zhihu"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-zhihu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 6h6v12h-2l-2 2l-1 -2h-1z" />
+  <path d="M4 12h6.5" />
+  <path d="M10.5 6h-5" />
+  <path d="M6 4c-.5 2.5 -1.5 3.5 -2.5 4.5" />
+  <path d="M8 6v7c0 4.5 -2 5.5 -4 7" />
+  <path d="M11 18l-3 -5" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" >
+                数据库
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/attend-a-funeral3/">sql 50题练习</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 03, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><strong>表结构如下：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">Student</span><span class="p">(</span><span class="n">SId</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">Sname</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">Sage</span><span class="w"> </span><span class="n">datetime</span><span class="p">,</span><span class="n">Ssex</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;赵雷&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;男&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;钱电&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-12-21&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;男&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;孙风&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-12-20&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;男&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;04&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李云&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-12-06&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;男&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;05&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;周梅&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1991-12-01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;06&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;吴兰&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1992-01-01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;07&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;郑竹&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1989-01-01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;09&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;张三&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2017-12-20&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李四&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2017-12-25&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李四&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2012-06-06&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;赵六&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2013-06-13&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;13&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;孙七&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2014-06-01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">Course</span><span class="p">(</span><span class="n">CId</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">Cname</span><span class="w"> </span><span class="n">nvarchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">TId</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;语文&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;数学&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Course</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;英语&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;03&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">Teacher</span><span class="p">(</span><span class="n">TId</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">Tname</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Teacher</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;张三&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Teacher</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李四&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Teacher</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;王五&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">week</span><span class="p">(</span><span class="n">CURDATE</span><span class="p">())</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">SC</span><span class="p">(</span><span class="n">SId</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">CId</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">score</span><span class="w"> </span><span class="nb">decimal</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;04&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;04&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;04&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;05&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">76</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;05&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;06&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;06&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;07&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">SC</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="s1">&#39;07&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;03&#39;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">98</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>1.sql语句的执行顺序为</p>
+<blockquote>
+<p>当一个查询语句同时出现了where,group by,having,order by的时候，执行顺序和编写顺序是：
+1.执行where xx对全表数据做筛选，返回第1个结果集。
+2.针对第1个结果集使用group by分组，返回第2个结果集。
+3.针对第2个结果集中的数据执行select xx返回第3个结果集。
+4.针对第3个结集执行having xx进行筛选，返回第4个结果集。
+5.针对第4个结果集排序,获得最终结果。</p>
+</blockquote>
+<p>2.SUM(),MIN(),Max()这类的，我们称作是聚合函数。那么我们不能在where子句中使用这些函数，为什么呢？</p>
+<blockquote>
+<p>聚集函数也叫列函数，它们都是基于整列数据进行计算的，而where子句则是对数据行进行过滤的(这里过滤是在一个记录里边过滤的,基于&quot;行&quot;)，在筛选过程中依赖“基于已经筛选完毕的数据得出的计算结果”是一种悖论，这是行不通的。更简单地说，因为聚集函数要对全列数据时行计算，因而使用它的前提是：结果集已经确定！</p>
+</blockquote>
+<p>而where子句还处于“确定”结果集的过程中，因而不能使用聚集函数。</p>
+<p>1.查询&quot; 01 &ldquo;课程比&rdquo; 02 &ldquo;课程成绩高的学生的信息及课程分数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Student</span><span class="p">,</span><span class="w">  </span><span class="p">(</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="n">t1</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">,</span><span class="n">t2</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="k">from</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">SId</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">t1</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">SId</span><span class="w"> </span><span class="p">,</span><span class="n">score</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">t2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">t2</span><span class="p">.</span><span class="n">score</span><span class="w">  </span><span class="k">and</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t2</span><span class="p">.</span><span class="n">sid</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">where</span><span class="w">  </span><span class="n">Student</span><span class="p">.</span><span class="n">SId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">SId</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>2.查询平均成绩大于等于 60 分的同学的学生编号和学生姓名和平均成绩</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="w"> </span><span class="n">sname</span><span class="w"> </span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">avger</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="p">(</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">select</span><span class="w"> </span><span class="n">sid</span><span class="w"> </span><span class="p">,</span><span class="k">avg</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avger</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">Sid</span><span class="w">  </span><span class="k">having</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="o">&gt;</span><span class="w">  </span><span class="mi">60</span><span class="w"> </span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">on</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sid</span><span class="p">;</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>3.查询在 SC 表存在成绩的学生信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="o">*#</span><span class="n">DISTINCT去重</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="p">,</span><span class="n">sc</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">SId</span><span class="o">=</span><span class="n">sc</span><span class="p">.</span><span class="n">SId</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>4.查询所有同学的学生编号、学生姓名、选课总数、所有课程的成绩总和</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="p">,</span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="w"> </span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">s1</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">s2</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">join</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">sid</span><span class="p">,</span><span class="k">count</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">on</span><span class="w">  </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>5.查询「李」姓老师的数量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">tid</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">teacher</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">tname</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s2">&#34;李%&#34;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>6.查询学过「张三」老师授课的同学的信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="p">,</span><span class="n">s</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="p">,</span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w">  </span><span class="k">where</span><span class="w">  </span><span class="n">sc</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;02&#39;</span><span class="w">  </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">SId</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">s</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">sid</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>7.查询有成绩学生且选课总数大于等于2的同学的信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">STUDENT</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">STUDENT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">ID</span><span class="p">.</span><span class="n">SID</span><span class="w"> </span><span class="k">FROM</span><span class="w">  </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">SC</span><span class="p">.</span><span class="n">SID</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">total</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="p">)</span><span class="k">AS</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">course</span><span class="p">.</span><span class="n">cid</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">tcid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">course</span><span class="p">)</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ID</span><span class="p">.</span><span class="n">TOTAL</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">T1</span><span class="p">.</span><span class="n">TCID</span><span class="p">)</span><span class="k">AS</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">STUDENT</span><span class="p">.</span><span class="n">SID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">.</span><span class="n">SID</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>8.查询至少有一门课与学号为&rdquo; 01 &ldquo;的同学所学相同的同学的信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">in</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>9.查询没学过&quot;张三&quot;老师讲授的任一门课程的学生姓名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sid</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">sid</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">cid</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">teacher</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">tname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;张三&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">TId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">.</span><span class="n">tid</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">cid1</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cid1</span><span class="p">.</span><span class="n">cid</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>10.查询学生的总成绩，并进行排名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">s</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">sid</span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">s</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sid</span><span class="p">)</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">s</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>11.查询各科目优秀人数，分数在85分以上的人数为优秀</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">cid</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">cname</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="k">case</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">when</span><span class="w">  </span><span class="n">r</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">85</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="s2">&#34;优秀&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w">  </span><span class="k">join</span><span class="w"> </span><span class="n">course</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">on</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">cid</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">cid</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>12.查询语文成绩前三名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">Sname</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="p">,</span><span class="n">sc</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">,</span><span class="n">sc</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">cid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">co</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;语文&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">b</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="p">)</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="k">desc</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>13.查询各科成绩最高分、最低分和平均分：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;最高分&#39;</span><span class="p">,</span><span class="k">min</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;最低分&#39;</span><span class="p">,</span><span class="k">avg</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;平均分&#39;</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>14.查询每门课程被选修的学生数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>15.查询男生数、女生数量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">ssex</span><span class="w"> </span><span class="p">,</span><span class="k">count</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">ssex</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>16.查询名字含有风的学生的信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w">  </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sname</span><span class="w">  </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%风%&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>17.查询同名学生数量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sname</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">num</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w">  </span><span class="n">student</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="k">count</span><span class="p">(</span><span class="n">sname</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sname</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">num</span><span class="w"> </span><span class="o">&gt;</span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>17.嵌套查询列出同名的全部学生的信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">sname</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">sname</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sname</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">having</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>18.查询平均成绩大于等于 85 的所有学生的学号、姓名和平均成绩</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">avger</span><span class="w"> </span><span class="k">from</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w">   </span><span class="n">sid</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">avger</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sid</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="n">student</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">avger</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">85</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">aver</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">having</span><span class="w"> </span><span class="n">aver</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">85</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>19.查询课程编号为 01 且课程成绩在 80 分及以上的学生的学号和姓名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w">  </span><span class="n">sid</span><span class="w"> </span><span class="p">,</span><span class="n">score</span><span class="w"> </span><span class="p">,</span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">80</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="n">student</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sid</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="w"> </span><span class="p">,</span><span class="n">sc</span><span class="p">.</span><span class="n">score</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="p">,</span><span class="n">sc</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">cid</span><span class="o">=</span><span class="s2">&#34;01&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">and</span><span class="w"> </span><span class="n">score</span><span class="o">&gt;=</span><span class="mi">80</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>20.查询同名学生名单，并统计同名人数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="k">c</span><span class="p">.</span><span class="n">num</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">on</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">sid</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">sname</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w">  </span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="p">,</span><span class="k">count</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sname</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">sname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">sname</span><span class="p">;</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>21.查询至少有一门课与学号为&rdquo; 01 &ldquo;的同学所学相同的同学的信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="p">((</span><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="n">sc</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">SId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">join</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">cid</span><span class="p">)))</span><span class="k">as</span><span class="w"> </span><span class="n">a</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">,</span><span class="n">student</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">in</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;01&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>22.查询每门功成绩最好的前两名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">t1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">CId</span><span class="o">=</span><span class="n">t2</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">t2</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;</span><span class="n">t1</span><span class="p">.</span><span class="n">score</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">CId</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>23.查询不同课程成绩相同的学生的学生编号、课程编号、学生成绩</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="p">,</span><span class="n">sc</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="p">,</span><span class="n">sc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">cid</span><span class="p">;</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>24.成绩不重复，查询选修「张三」老师所授课程的学生中，成绩最高的学生信息及其成绩</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">cid</span><span class="p">,</span><span class="n">r</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="n">sc</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">co</span><span class="p">.</span><span class="w"> </span><span class="n">cid</span><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="n">co</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">co</span><span class="p">.</span><span class="n">TId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">teacher</span><span class="p">.</span><span class="n">tid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">teacher</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">teacher</span><span class="p">.</span><span class="n">Tname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;张三&#39;</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">desc</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">where</span><span class="w">  </span><span class="n">student</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sid</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>25.查询不同课程成绩相同的学生的学生编号、课程编号、学生成绩</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">t1</span><span class="p">,</span><span class="n">sc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="k">where</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">SId</span><span class="o">=</span><span class="n">t2</span><span class="p">.</span><span class="n">SId</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">CId</span><span class="o">!=</span><span class="n">t2</span><span class="p">.</span><span class="n">CId</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="n">t2</span><span class="p">.</span><span class="n">score</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/sql/">Sql</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span></span>
+    </section>
+    </footer>
+
+
+    
+
+    <script src="https://giscus.app/client.js"
+        data-repo="gitlgl/gitlgl.github.io"
+        data-repo-id="R_kgDOIW06ew"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOIW06e84Cgx20"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src="https://cdn.jsdelivr.us/npm/twikoo@1.6.21/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-submit-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-no,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send {
+        color: var(--twikoo-body-text-color-main);
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .twikoo .el-input__count {
+        color: var(--twikoo-body-text-color) !important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: '',
+        el: '#tcomment',})
+</script>
+
+    
+
+    <footer class="site-footer">
+   
+
+ 
+    <section class="copyright">
+        &copy; 
+        
+            2008 - 
+        
+        2024 个人博客
+    </section>
+    
+    <section class="powerby">
+        Built with Hugo & Stack, Powered by Github.<br>
+        
+       
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.us/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.us/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.us/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.us/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.us/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

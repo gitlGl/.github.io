@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>生活 on 个人博客</title>
+        <link>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/</link>
+        <description>Recent content in 生活 on 个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Thu, 11 Nov 2010 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>开始法院实习</title>
+        <link>http://localhost:1313/article/2010-11-11-shixi/</link>
+        <pubDate>Thu, 11 Nov 2010 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/article/2010-11-11-shixi/</guid>
+        <description>&lt;img src="http://localhost:1313/article/2010-11-11-shixi/pexels-photo-891059.webp" alt="Featured image of post 开始法院实习" /&gt;&lt;p&gt;去年七八月份就在法院执行局实习过了，这次毕业实习继续去的是法院执行局。&lt;/p&gt;
+&lt;p&gt;也不知道当时怎么活过来的，现在看起来，似乎已是两重天。&lt;/p&gt;
+&lt;p&gt;这次毕业实习是一拖再拖，最后弄到11月9日开正式开始，而将要结束时间是下年1月中旬。&lt;/p&gt;
+&lt;p&gt;禅城法院是个奇怪的地方，好像了用的以前佛山市中院搬迁前的楼，所以现在的局面是禅城法院下两栋楼隔一条街互望着，经常性的需要在两栋楼之间跑动，这中间隔着的街也不是小街小巷那种，城区主干道来的，大白天的时候，过街的绿灯估计是10秒钟左右，经常是人还没走到机动车道绿灯就一闪一闪预备转红了&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;佛山五区的法院，就当前情况来看，可能也就禅城法院的建设最落后了. 这种现象估计在其他地市是很罕见的：市政府所在辖区的基层法院竟然比该市其他区的法院都要落后。&lt;/p&gt;
+&lt;p&gt;之所以如此个人猜想主要有以下三个原因：&lt;/p&gt;
+&lt;p&gt;1，禅城的用地比较紧张，毕竟面积小，免费拨一块地给法院盖大楼，不如直接卖给开发商。&lt;/p&gt;
+&lt;p&gt;1，禅城区法院的案件数比较少。 户籍人口只有60万人，但是法官人数却不少，跟隔壁南海顺德管辖几百万人口的法院相比，法官人数却不比他们少多少。&lt;/p&gt;
+&lt;p&gt;2，据说法院的建设资金，财政局只负责出一部分，其他方面还得靠法院自己去挣钱&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;从图上就能看出来了，佛山5区法院，就硬件来说，禅城区法院确实是最差的了。&lt;/p&gt;
+&lt;p&gt;执行局的工作是我自己挑的，可能是脑袋被门夹了，但既来之则安之，尽量做好吧。&lt;/p&gt;
+&lt;p&gt;之前在南海法院只是打打酱油，每天打印下文书，上网录录案件，跟着法警大哥每天到处贴公告看房子&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;这次算是实际点，跟着书记员大哥整天整理案件档案。 看架势，办公室遗留的那些个案卷，一两个星期也就能搞个一干二净了，这以后的日子可是会很清闲的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;os&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 执行复杂的命令，不方便获取输出&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;hugo&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#os.system(&amp;#39;hugo server&amp;#39;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;git  -C public  init &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;git -C public add .&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

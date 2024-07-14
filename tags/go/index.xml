@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Go on 个人博客</title>
+        <link>http://localhost:1313/tags/go/</link>
+        <description>Recent content in Go on 个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 15 Feb 2023 16:57:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>go包管理</title>
+        <link>http://localhost:1313/article/attend-a-funeral2/</link>
+        <pubDate>Wed, 15 Feb 2023 16:57:30 +0000</pubDate>
+        
+        <guid>http://localhost:1313/article/attend-a-funeral2/</guid>
+        <description>&lt;img src="http://localhost:1313/article/attend-a-funeral2/s.webp" alt="Featured image of post go包管理" /&gt;&lt;p&gt;1.gopath,不使用mod管理时候外部包的引入通过环境变量gopath引入，包括自建包。&lt;/p&gt;
+&lt;p&gt;2.使用mod管理后第三方依赖包会自动下载到第一个gopath的src目录下，此时对自建包则可以直接通过相对路径引入。
+3.包内引用其他文件时是通过pack [包名]实现，因为引用优先找包内，之后才是其他包。一个文件夹其实就是一个包。&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
